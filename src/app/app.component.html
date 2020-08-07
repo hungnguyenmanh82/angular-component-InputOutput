@@ -1,9 +1,16 @@
 <app-input [input1]="title1" [input2]="title2"></app-input>
 
-<!-- $event: ko có nghĩa vì đây là functionPoint, lý ra phải bỏ đi mới đúng -->
-<app-output (output1)="this.outputImplement1($event)" (output2)="this.outputImplement2($event)"></app-output>
+<!-- $event:  biến javaScript local chứa output data của child component dc EventEmitter trigger -->
+<!-- $event:  là local chỉ có tác dụng trong double quote thôi -->
+<!-- (output) = "javaScript expression" -->
+<!-- javaScript expression sẽ đc kích hoạt mỗi lần EventEmitter.emit(). nó ko cần chứa $event vẫn đc -->
+<app-output (output1)="outputMessage1=$event" (output2)="this.outputImplement2($event)"></app-output>
 
 <h1>@Output()output1 = {{outputMessage1}}</h1>
 <h1>@Output() output2 = {{numberClick}}</h1>
 
+<!-- javaScript expression sẽ đc kích hoạt mỗi lần EventEmitter.emit(). nó ko cần chứa $event vẫn đc -->
+<!-- vd rõ nhất là hàm onclick ở button -->
+<app-output (output1)="changeOutput1()"></app-output>
 
+<h1 style="color: red;">{{changeOutput1Number}}</h1>

@@ -18,6 +18,7 @@ export class AppComponent {
   outputMessage1: String = 'start';
   numberClick: number = 1234;   //khởi tạo
 
+  changeOutput1Number: number = 8;
 
   outputImplement1(message: String) {
     this.outputMessage1 = message;
@@ -25,5 +26,9 @@ export class AppComponent {
 
   outputImplement2(numberClick: number) {
     this.numberClick = numberClick;
+  }
+
+  changeOutput1(){
+    this.changeOutput1Number++;
   }
 }
