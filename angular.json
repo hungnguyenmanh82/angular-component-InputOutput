@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "a14-componentTemplate-InputOutput"
+    }
+  },
+  "defaultProject": "a14-componentTemplate-InputOutput",
+  "cli": {
+    "analytics": false
+  }
 }
