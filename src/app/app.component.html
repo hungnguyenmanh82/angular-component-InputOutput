@@ -1,4 +1,14 @@
+<p>click button để parent gửi data tới InputComponent</p>
+<button class="button" (click)="title1 ='tile1 changed' "> change tile1</button>
+<!-- biến title1 thay đổi runtime thì <app-input> sẽ đc cập nhật runtime -->
 <app-input [input1]="title1" [input2]="title2"></app-input>
+
+<div class="input-interceptor-div">
+  <label for="nameId"> input for child component</label>
+  <input id="nameId" type="text" [(ngModel)]="nameInputInterceptor">
+</div>
+
+<app-input-interceptor [name] ="nameInputInterceptor" ></app-input-interceptor>
 
 <!-- $event:  biến javaScript local chứa output data của child component dc EventEmitter trigger -->
 <!-- $event:  là local chỉ có tác dụng trong double quote thôi -->

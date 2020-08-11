@@ -7,14 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
   /**
-   * ngoặc vuông [] để chỉ @input:
+   * Parent html:
+   *       <app-input [input1]="Hello:" [input2]="Hungbeo"></app-input>
    *
-   * <app-input [input1]="Hello:" [input2]="Hungbeo"></app-input>
+   * ngoặc vuông [] để chỉ @input:
    */
-  // 'input1': là tên attribute ở component tag
+  // 'input1': là tên attribute ở component-tag trong Parent html
   @Input('input1') name1: String;
 
-  // nếu ko đặt tên thì sẽ lấy tên biến luôn
+  // nếu ko đặt tên thì sẽ lấy tên biến luôn => dùng cách này
   @Input() input2: String;
 
   constructor() {}

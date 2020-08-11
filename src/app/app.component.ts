@@ -13,6 +13,11 @@ export class AppComponent {
   title2 = 'title 2';
 
   /**
+   * test @Input() interceptor event
+   */
+  nameInputInterceptor:string;
+
+  /**
    * test @output() with OuputComponent
    */
   outputMessage1: String = 'start';

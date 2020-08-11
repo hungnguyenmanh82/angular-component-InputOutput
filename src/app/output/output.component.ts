@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { OutputInterface } from './OutputInterface';
 
 @Component({
   selector: 'app-output',
@@ -11,6 +10,9 @@ export class OutputComponent implements OnInit {
 
   }
   /**
+   * Parent html:
+   *        <app-output (output1)="callback($event)">
+   *
    * 'output1' là tên attribute ở component tag  <app-output (output1)="callback($event)">
    *  nếu ko đặt tên thì lấy tên biến làm tên attribute
    *  EventEmitter<T> là bắt buộc khi dùng @output. đây là class hỗ trợ của Angular
@@ -18,8 +20,10 @@ export class OutputComponent implements OnInit {
   @Output('output1') testOutput1 = new EventEmitter<string>(); // String: là ouput child send parent
 
   /**
-   * 'output2' là tên attribute ở component tag  <app-output (output2)="callback($event)">
+   * Parent html:
+   *        <app-output (output2)="callback($event)">
    *
+   *  nếu ko đặt tên thì lấy tên biến làm tên attribute
    *  EventEmitter<T> là bắt buộc khi dùng @output. đây là class hỗ trợ của Angular
    */
   @Output() output2 = new EventEmitter<number>(); // String: là ouput
