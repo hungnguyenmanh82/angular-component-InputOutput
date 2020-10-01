@@ -1,6 +1,6 @@
-# A14ComponentTemplateInputOutput
+# Component Template Input/Output
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+[Demo](https://hungnguyenmanh82.github.io/angular-component-InputOutput/)
 
 ## Development server
 
