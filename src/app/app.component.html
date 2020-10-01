@@ -1,26 +1,36 @@
 <p>click button để parent gửi data tới InputComponent</p>
-<button class="button" (click)="title1 ='tile1 changed' "> change tile1</button>
+<button class="button" (click)="title1 = 'tile1 changed'">change tile1</button>
 <!-- biến title1 thay đổi runtime thì <app-input> sẽ đc cập nhật runtime -->
 <app-input [input1]="title1" [input2]="title2"></app-input>
 
 <div class="input-interceptor-div">
   <label for="nameId"> input for child component</label>
-  <input id="nameId" type="text" [(ngModel)]="nameInputInterceptor">
+  <input id="nameId" type="text" [(ngModel)]="nameInputInterceptor" />
 </div>
 
-<app-input-interceptor [name] ="nameInputInterceptor" ></app-input-interceptor>
+<app-input-interceptor [name]="nameInputInterceptor"></app-input-interceptor>
 
+<h3 style="color: red">
+  &lt;app-output (output1)=&quot;outputMessage1=$event&quot;
+  (output2)=&quot;this.outputImplement2($event)&quot;&gt;&lt;/app-output&gt;
+</h3>
 <!-- $event:  biến javaScript local chứa output data của child component dc EventEmitter trigger -->
 <!-- $event:  là local chỉ có tác dụng trong double quote thôi -->
 <!-- (output) = "javaScript expression" -->
 <!-- javaScript expression sẽ đc kích hoạt mỗi lần EventEmitter.emit(). nó ko cần chứa $event vẫn đc -->
-<app-output (output1)="outputMessage1=$event" (output2)="this.outputImplement2($event)"></app-output>
+<app-output
+  (output1)="outputMessage1 = $event"
+  (output2)="this.outputImplement2($event)"
+></app-output>
 
-<h1>@Output()output1 = {{outputMessage1}}</h1>
-<h1>@Output() output2 = {{numberClick}}</h1>
+<h1>@Output()output1 = {{ outputMessage1 }}</h1>
+<h1>@Output() output2 = {{ numberClick }}</h1>
 
+<h3 style="color: red">
+  &lt;app-output (output1)=&quot;changeOutput1()&quot;&gt;&lt;/app-output&gt;
+</h3>
 <!-- javaScript expression sẽ đc kích hoạt mỗi lần EventEmitter.emit(). nó ko cần chứa $event vẫn đc -->
 <!-- vd rõ nhất là hàm onclick ở button -->
 <app-output (output1)="changeOutput1()"></app-output>
 
-<h1 style="color: red;">{{changeOutput1Number}}</h1>
+<h1 style="color: red">{{ changeOutput1Number }}</h1>
