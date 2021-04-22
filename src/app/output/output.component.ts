@@ -2,13 +2,11 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-output',
-  templateUrl:'./output.component.html',
+  templateUrl: './output.component.html',
   styleUrls: ['./output.component.scss'],
 })
 export class OutputComponent implements OnInit {
-  ngOnInit(){
-
-  }
+  ngOnInit() {}
   /**
    * Parent html:
    *        <app-output (output1)="callback($event)">
@@ -26,9 +24,9 @@ export class OutputComponent implements OnInit {
    *  nếu ko đặt tên thì lấy tên biến làm tên attribute
    *  EventEmitter<T> là bắt buộc khi dùng @output. đây là class hỗ trợ của Angular
    */
-  @Output() output2 = new EventEmitter<number>(); // String: là ouput
+  @Output() output2 = new EventEmitter<number>(); // number: là ouput
 
-  numberClick:number=0;
+  numberClick: number = 0;
 
   onClick1() {
     // component gửi data cho Parent

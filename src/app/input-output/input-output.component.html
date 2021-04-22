@@ -1,0 +1,29 @@
+<div class="component-layout">
+  <h2>input-output.component!</h2>
+
+  <p style="color: blue">
+    * &lt;@outputName&gt; = &lt;@inputName&gt; + 'Change'
+    <br />
+    <br />
+    @output() nameChange: EventEmitter&lt;string&gt;
+    <br />
+    @input()
+    <br />
+    get name():string &#123; &#125;
+    <br />
+    set name(name: string)&#123; &#125;
+  </p>
+  <!-- lấy từ @input get name()   -->
+  <h3>{{ name }}</h3>
+
+  <!-- nếu ko dùng Form thì ko cần phải khai báo "name" cho <input> -->
+  <div>
+    <!--  dùng label kiểu này ko cần phải khai báo "for = input_id" ở attribute -->
+
+    <!-- (ngModelChange) là @output của ngModel directive -->
+    <!-- phải có ngModel hoặc [ngModel] thì (ngModelChange) mới work-->
+    <label
+      >Name: <input id="name" type="text" ngModel (ngModelChange)="onNameChange($event)" />
+    </label>
+  </div>
+</div>

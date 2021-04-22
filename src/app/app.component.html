@@ -1,8 +1,12 @@
 <p>click button để parent gửi data tới InputComponent</p>
 <button class="button" (click)="title1 = 'tile1 changed'">change tile1</button>
+<h3 style="color: red">
+  &lt;app-input [input1]=&quot;title1&quot; [input2]=&quot;title2&quot;&gt;&lt;/app-input&gt;
+</h3>
 <!-- biến title1 thay đổi runtime thì <app-input> sẽ đc cập nhật runtime -->
 <app-input [input1]="title1" [input2]="title2"></app-input>
 
+<p>-------------------------------------------------------------------</p>
 <div class="input-interceptor-div">
   <label for="nameId"> input for child component</label>
   <input id="nameId" type="text" [(ngModel)]="nameInputInterceptor" />
@@ -10,6 +14,7 @@
 
 <app-input-interceptor [name]="nameInputInterceptor"></app-input-interceptor>
 
+<p>-------------------------------------------------------------------</p>
 <h3 style="color: red">
   &lt;app-output (output1)=&quot;outputMessage1=$event&quot;
   (output2)=&quot;this.outputImplement2($event)&quot;&gt;&lt;/app-output&gt;
@@ -26,6 +31,7 @@
 <h1>@Output()output1 = {{ outputMessage1 }}</h1>
 <h1>@Output() output2 = {{ numberClick }}</h1>
 
+<p>-------------------------------------------------------------------</p>
 <h3 style="color: red">
   &lt;app-output (output1)=&quot;changeOutput1()&quot;&gt;&lt;/app-output&gt;
 </h3>
@@ -34,3 +40,9 @@
 <app-output (output1)="changeOutput1()"></app-output>
 
 <h1 style="color: red">{{ changeOutput1Number }}</h1>
+
+<p>-------------------------------------------------------------------</p>
+<h3 style="color: red">&lt;app-input-output [(name)] = &quot; this.name&quot;&gt;</h3>
+
+<h3>{{ name }}</h3>
+<app-input-output [(name)]="this.name"></app-input-output>

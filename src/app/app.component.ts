@@ -15,15 +15,20 @@ export class AppComponent {
   /**
    * test @Input() interceptor event
    */
-  nameInputInterceptor:string;
+  nameInputInterceptor: string;
 
   /**
    * test @output() with OuputComponent
    */
   outputMessage1: String = 'start';
-  numberClick: number = 1234;   //khởi tạo
+  numberClick: number = 1234; //khởi tạo
 
   changeOutput1Number: number = 8;
+
+  /**
+   * test @output@input = 2 way binding = [(name)]
+   */
+  name: String = 'test @input@ouput';
 
   outputImplement1(message: String) {
     this.outputMessage1 = message;
@@ -33,7 +38,7 @@ export class AppComponent {
     this.numberClick = numberClick;
   }
 
-  changeOutput1(){
+  changeOutput1() {
     this.changeOutput1Number++;
   }
 }
