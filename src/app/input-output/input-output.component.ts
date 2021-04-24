@@ -16,7 +16,7 @@ export class InputOutputComponent implements OnInit {
   @Input()
   get name(): string {
     return this._nameSave;
-  } // hàm này dc gọi sau. Chú ý kiểu Trả về
+  } // kiểu trả về phải cùng kiểu đầu vào của Set nếu ko sẽ báo lỗi
   set name(name: string) {
     // hàm này đc gọi trc. chú ý kiểu đầu vào
     this._nameSave = name.toUpperCase();
