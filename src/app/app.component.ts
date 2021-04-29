@@ -30,6 +30,8 @@ export class AppComponent {
    */
   name: String = 'test @input@ouput';
 
+  name2: string = "test ngOnChange";
+
   outputImplement1(message: String) {
     this.outputMessage1 = message;
   }

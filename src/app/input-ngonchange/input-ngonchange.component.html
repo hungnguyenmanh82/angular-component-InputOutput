@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>input-ngonchange.component:</h2>
+  <p>
+    + dùng ngOnChanges() để bắt event khi có thay đổi ở @Input()
+    <br />
+    + nhược điểm: nếu có nhiều @input() ta sẽ phải duyệt từng @Input rất mệt
+    <br />
+    + ưu điểm: Dùng để check xem thông tin gì đã đc thay đổi kể từ lần đầu
+    <br />
+    + nên dùng @input() set/get hay hơn
+  </p>
+
+  <h3>name = {{ name }}</h3>
+
+  <p style="color: red">{{ nameProperties | json }}</p>
+</div>

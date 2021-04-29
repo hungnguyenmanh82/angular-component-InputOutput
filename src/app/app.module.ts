@@ -7,6 +7,7 @@ import { OutputComponent } from './output/output.component';
 import { InputInterceptorComponent } from './input-interceptor/input-interceptor.component';
 import { FormsModule } from '@angular/forms';
 import { InputOutputComponent } from './input-output/input-output.component';
+import { InputNgonchangeComponent } from './input-ngonchange/input-ngonchange.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { InputOutputComponent } from './input-output/input-output.component';
       InputComponent,
       OutputComponent,
       InputInterceptorComponent,
-      InputOutputComponent
+      InputOutputComponent,
+      InputNgonchangeComponent
    ],
    imports: [
       BrowserModule,

@@ -12,7 +12,19 @@
   <input id="nameId" type="text" [(ngModel)]="nameInputInterceptor" />
 </div>
 
-<app-input-interceptor [name]="nameInputInterceptor"></app-input-interceptor>
+<!-- order @input ở đây rất quan trọng tới order trigger event -->
+<app-input-interceptor
+  [lastName]="'lastName'"
+  [name]="nameInputInterceptor"
+></app-input-interceptor>
+
+<p>-------------------------------------------------------------------</p>
+<div class="input-interceptor-div">
+  <label for="nameId2"> input for child component</label>
+  <input id="nameId2" type="text" [(ngModel)]="name2" />
+</div>
+
+<app-input-ngonchange [name]="name2"></app-input-ngonchange>
 
 <p>-------------------------------------------------------------------</p>
 <h3 style="color: red">
